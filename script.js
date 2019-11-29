@@ -10,36 +10,21 @@
             const trainingLevel = document.querySelector('#trainingLevel');
             const calculate = document.querySelector('#calculate');
             const inputs = document.querySelectorAll('input');
-
-            trainingLevel.addEventListener('change', () => {
-                priceDisplay.textContent = getMarketPrice();
-            });
-
-            horseTierSelect.addEventListener('change', () => {
-                priceDisplay.textContent = getImperialPrice();
-            });
+            const select = document.querySelectorAll('select');
 
             sellType.addEventListener('change', changeOptions);
 
-            inputs.forEach((input) => {
-                input.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
-                        if (sellType.value === 'imperial') {
-                            priceDisplay.textContent = getImperialPrice();
-                        } else {
-                            priceDisplay.textContent = getMarketPrice();
-                        }
-                        console.log(e.key);
-                    }
+            select.forEach((select) => {
+                select.addEventListener('change', () => {
+                    getPrice();
                 });
             });
 
-            calculate.addEventListener('click', () => {
-                if (sellType.value === 'imperial') {
-                    priceDisplay.textContent = getImperialPrice();
-                } else {
-                    priceDisplay.textContent = getMarketPrice();
-                }
+            inputs.forEach((input) => {
+                input.addEventListener('keyup', (e) => {
+                    let withCommas = addCommas(e.target.value);
+                    getPrice();
+                });
             });
 
             function changeOptions() {
@@ -53,6 +38,14 @@
                     priceInputAMC.disabled = true;
                     priceInputBMC.disabled = true;
                     trainingLevel.disabled = false;
+                }
+            }
+
+            function getPrice() {
+                if (sellType.value === 'imperial') {
+                    priceDisplay.textContent = getImperialPrice();
+                } else {
+                    priceDisplay.textContent = getMarketPrice();
                 }
             }
 
