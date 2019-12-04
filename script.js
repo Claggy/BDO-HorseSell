@@ -3,8 +3,6 @@ const priceDisplay = document.querySelector('#priceDisplay');
 const sellType = document.querySelector('#sellType');
 const horseTier = document.querySelector('#horseTier');
 const horseTierSelect = document.querySelector('#horseTierSelect');
-const priceAMC = document.querySelector('#priceAMC');
-const priceBMC = document.querySelector('#priceBMC');
 const priceInputAMC = document.querySelector('#priceInputAMC');
 const priceInputBMC = document.querySelector('#priceInputBMC');
 const trainingLevel = document.querySelector('#trainingLevel');
@@ -19,7 +17,10 @@ select.forEach((select) => {
 });
 
 inputs.forEach((input) => {
-    input.addEventListener('keyup', getPrice);
+    input.addEventListener('keyup', () => {
+        removeThousandSeparators();
+        getPrice();
+    });
 });
 
 function changeOptions() {
@@ -36,6 +37,23 @@ function changeOptions() {
     }
 }
 
+function removeThousandSeparators() {
+    let inputsMerged = priceInput.value.concat(priceInputAMC.value, priceInputBMC.value);
+    if (inputsMerged.includes(',') || inputsMerged.includes('.') || inputsMerged.includes(' ')) {
+        sellPrice = priceInput.value.replace(/,|\.| /g,'');
+        priceAMC = priceInputAMC.value.replace(/,|\.| /g,'');
+        priceBMC = priceInputBMC.value.replace(/,|\.| /g,'');
+    } else {
+        sellPrice = priceInput.value;
+        priceAMC = priceInputAMC.value;
+        priceBMC = priceInputBMC.value;
+    }
+}
+
+function addCommas(num) {
+    return (num + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+}
+
 function getPrice() {
     if (sellType.value === 'imperial') {
         priceDisplay.textContent = getImperialPrice();
@@ -45,18 +63,14 @@ function getPrice() {
 }
 
 function getMarketPrice() {
-    taxedPrice = (priceInput.value - priceInput.value * .3);
-    marketPrice = (taxedPrice) * trainingLevel.value + (taxedPrice);
-    finalPrice = Math.round(marketPrice);
+    let taxedPrice = (sellPrice - sellPrice * .3);
+    let marketPrice = (taxedPrice) * trainingLevel.value + (taxedPrice);
+    let finalPrice = Math.round(marketPrice);
     return addCommas(finalPrice);
 }
 
 function getImperialPrice() {
-    imperialPrice = (priceInputBMC.value - priceInputAMC.value) / 12 * horseTierSelect.value + (priceInput.value / 2);
-    finalPrice = Math.round(imperialPrice);
+    let imperialPrice = (priceBMC - priceAMC) / 12 * horseTierSelect.value + (sellPrice / 2);
+    let finalPrice = Math.round(imperialPrice);
     return addCommas(finalPrice);
-}
-
-function addCommas(intNum) {
-    return (intNum + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
