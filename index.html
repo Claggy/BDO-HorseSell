@@ -7,15 +7,15 @@
     <body>
         <h1 id="priceDisplay"></h1>
         
-        <label>Sell price:<input id="priceInput" value="0"></label>
+        <label>Sell price:<input id="priceInput" value="0" autocomplete="off"></label>
 
-        <select id="sellType">
+        <select id="sellType" autocomplete="off">
             <option value="marketplace">Marketplace</option>
             <option value="imperial">Imperial</option>
         </select>
 
-        <label for="trainingLevel">Training level:</label>
-        <select id="trainingLevel">
+        <label>Training level:
+            <select id="trainingLevel" autocomplete="off">
             <option value="0">Beginner 1-10</option>
             <option value="0.01">Apprentice 1</option>
             <option value="0.011">Apprentice 2</option>
@@ -88,11 +88,12 @@
             <option value="0.256">Master 29</option>
             <option value="0.26">Master 30</option>
             <option value="0.3">Guru 1+</option>
-        </select>
+            </select>
+        </label>
 
         <div id="horseTier">
             <label for="horseTierSelect">Horse tier:</label>
-            <select class="imperialOptions" id="horseTierSelect" disabled>
+            <select class="imperialOptions" id="horseTierSelect" autocomplete="off" disabled>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -104,18 +105,45 @@
             </select>
         </div>
 
+        <div id="familyFame">
+            <label for="familyFameSelect">Family Fame:</label>
+            <select class="imperialOptions" id="familyFameSelect" autocomplete="off" disabled>
+                <option value="0">0-999 / 0.0%</option>
+                <option value="0.005">1000-3999 / 0.5%</option>
+                <option value="0.01">4000 - 6999 / 1.0%</option>
+                <option value="0.015">7000+ / 1.5%</option>
+            </select>
+        </div>
+
         <div id="priceAMC">
-            <label>AMC price:
-            <input class="imperialOptions" id="priceInputAMC" value="0" disabled>
-            </label>
+            <label for="priceInputAMC">AMC price:</label>
+            <input class="imperialOptions" id="priceInputAMC" value="0" autocomplete="off" disabled>
         </div>
 
         <div id="priceBMC">
-            <label>BMC price:
-            <input class="imperialOptions" id="priceInputBMC" value="0" disabled>
-            </label>
+            <label for="priceInputBMC">BMC price:</label>
+            <input class="imperialOptions" id="priceInputBMC" value="0" autocomplete="off" disabled>
         </div>
 
-        <script type="text/javascript" src="script.js"></script>
+        <div id="vp">
+            <label for="vpCheck">Value Pack:</label>
+            <input type="checkbox" class="imperialOptions" id="vpCheck" value="0.845" autocomplete="off" checked disabled> 
+        </div>
+        
+        <div id="desc"> 
+            <p class>
+                Thanks to Black Essence: Viper from Imperial Training seals, selling horses via Imperial Delivery is sometimes more profitable than selling them on the horse market if you sell the Black Magic Crystal - Viper created with the essence. This tool is for determining if the horse market or imperial will be more profitable.
+            </p>
+            
+            <ul class>
+                <li>Enter the marketplace price even if you're only checking the result for imperial.</li>
+                
+                <li>Horse market price includes tax along with the additional silver return you get based on your training level.</li>
+                
+                <li>Base imperial result may be off by 1 or 2 silver because apparently BDO likes to use 50% of market price for one, 50.0000015% for another, 49.99999885829% for another, and so on. 🤔</li>
+            </ul> 
+        </div>
+            
+            <script type="text/javascript" src="script.js"></script>
     </body>
-</html>
+    </html>
