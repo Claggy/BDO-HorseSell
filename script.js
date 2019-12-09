@@ -5,8 +5,13 @@ const horseTier = document.querySelector('#horseTier');
 const horseTierSelect = document.querySelector('#horseTierSelect');
 const priceInputAMC = document.querySelector('#priceInputAMC');
 const priceInputBMC = document.querySelector('#priceInputBMC');
+const trainLevel = document.querySelector('#trainLevel');
 const trainingLevel = document.querySelector('#trainingLevel');
+const amc = document.querySelector('#amc');
+const bmc = document.querySelector('#bmc');
+const vp = document.querySelector('#vp');
 const valuePack = document.querySelector('#vpCheck');
+const famFame = document.querySelector('#famFame');
 const familyFame = document.querySelector('#familyFameSelect');
 const inputs = document.querySelectorAll('input');
 const select = document.querySelectorAll('select');
@@ -31,28 +36,28 @@ inputs.forEach((input) => {
 
 function changeOptions() {
     if (sellType.value === 'imperial') {
-        horseTierSelect.disabled = false;
-        priceInputAMC.disabled = false;
-        priceInputBMC.disabled = false;
-        trainingLevel.disabled = true;  
-        valuePack.disabled = false;
-        familyFame.disabled = false;   
+        horseTier.hidden = false;
+        amc.hidden = false;
+        bmc.hidden = false;
+        trainLevel.hidden = true;
+        vp.hidden = false;
+        famFame.hidden = false;
     } else {
-        horseTierSelect.disabled = true;
-        priceInputAMC.disabled = true;
-        priceInputBMC.disabled = true;
-        trainingLevel.disabled = false;
-        valuePack.disabled = true;
-        familyFame.disabled = true; 
+        horseTier.hidden = true;
+        amc.hidden = true;
+        bmc.hidden = true;
+        trainLevel.hidden = false;
+        vp.hidden = true;
+        famFame.hidden = true;
     }
 }
 
 function removeThousandSeparators() {
     let inputsMerged = priceInput.value.concat(priceInputAMC.value, priceInputBMC.value);
     if (inputsMerged.includes(',') || inputsMerged.includes('.') || inputsMerged.includes(' ')) {
-        sellPrice = priceInput.value.replace(/,|\.| /g,'');
-        priceAMC = priceInputAMC.value.replace(/,|\.| /g,'');
-        priceBMC = priceInputBMC.value.replace(/,|\.| /g,'');
+        sellPrice = priceInput.value.replace(/,|\.| /g, '');
+        priceAMC = priceInputAMC.value.replace(/,|\.| /g, '');
+        priceBMC = priceInputBMC.value.replace(/,|\.| /g, '');
     } else {
         sellPrice = priceInput.value;
         priceAMC = priceInputAMC.value;
