@@ -19,9 +19,11 @@ const select = document.querySelectorAll('select');
 sellType.addEventListener('change', changeOptions);
 
 valuePack.addEventListener('change', () => {
-    updateValuePackMod();
+    updateMarketSilverReturn();
     getPrice();
 });
+
+familyFame.addEventListener('change', updateMarketSilverReturn);
 
 select.forEach((select) => {
     select.addEventListener('change', getPrice);
@@ -65,11 +67,11 @@ function removeThousandSeparators() {
     }
 }
 
-function updateValuePackMod() {
+function updateMarketSilverReturn() {
     if (valuePack.checked) {
-        valuePack.value = "0.845";
+        valuePack.value = 0.65 * (1.3 + Number(familyFame.value));
     } else {
-        valuePack.value = "0.65";
+        valuePack.value = 0.65 * (1 + Number(familyFame.value));
     }
 }
 
@@ -93,7 +95,7 @@ function getMarketPrice() {
 }
 
 function getImperialPrice() {
-    let imperialPrice = (priceBMC * (Number(valuePack.value) + Number(familyFame.value)) - priceAMC) / 12 * horseTierSelect.value + (sellPrice / 2);
+    let imperialPrice = (priceBMC * valuePack.value - priceAMC) / 12 * horseTierSelect.value + (sellPrice / 2);
     let finalPrice = Math.round(imperialPrice);
     return addCommas(finalPrice);
 }
