@@ -1,8 +1,75 @@
+html {
+    background: #1e1e1e url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    background-color: #1e1e1e;
-    color: #cccccc;
+    background-color: transparent;
+    color: #000000;
+    margin: 0;
+}
+
+.content {
+    max-width: 34.375em;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 14px 0 12px 0;
+    color: rgba(255,234,197, 0.74);
+}
+
+.options {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#desc, input, select, button {
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: rgba(255,234,197,0.74);
+}
+
+label {
+    color: rgba(255,234,197);
+    text-shadow: 0px 0px 2px rgba(73, 92, 115);
 }
 
 #desc {
-    width: 500px;
+    margin: 0 auto;
+    max-width: 32.5em;
+    box-shadow: -2px 2px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.row-2 {
+    position: relative;
+    right: 1.88em;
+}
+
+.row-3 {
+    position: relative;
+    right: 3.05em;
+}
+
+#valuePack {
+    height: 1.5em;
+    width: 7.5em;
+    padding: 0;
+}
+
+.row-2, .row-3 {
+    margin-top: 2px;
+}
+
+#desc p {
+    margin: 8px;
+}
+
+button, input, select {
+  font-family: inherit;
+  line-height: 1.15;
+  margin: 0;
 }

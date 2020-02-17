@@ -5,145 +5,141 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <h1 id="priceDisplay"></h1>
-        
-        <label>Sell price:<input id="priceInput" value="0" autocomplete="off"></label>
+        <div class="content">
+            <h1 id="priceDisplay">&nbsp;</h1>
+            <div class="options">
+                <div class="row-1">
+                    <label>Sell price: <input id="priceInput" value="0" autocomplete="off"></label>
 
-        <select id="sellType" autocomplete="off">
-            <option value="marketplace">Marketplace</option>
-            <option value="imperial">Imperial</option>
-        </select>
+                    <select id="sellType" autocomplete="off">
+                        <option value="marketplace">Marketplace</option>
+                        <option value="imperial">Imperial</option>
+                    </select>
+    
+                    <select id="trainingLevel" autocomplete="off">
+                        <option value="0">Training Level</option>
+                        <option value="0">Beginner 1-10</option>
+                        <option value="0.01">Apprentice 1</option>
+                        <option value="0.011">Apprentice 2</option>
+                        <option value="0.012">Apprentice 3</option>
+                        <option value="0.013">Apprentice 4</option>
+                        <option value="0.014">Apprentice 5</option>
+                        <option value="0.015">Apprentice 6</option>
+                        <option value="0.016">Apprentice 7</option>
+                        <option value="0.017">Apprentice 8</option>
+                        <option value="0.018">Apprentice 9</option>
+                        <option value="0.019">Apprentice 10</option>
+                        <option value="0.02">Skilled 1</option>
+                        <option value="0.021">Skilled 2</option>
+                        <option value="0.022">Skilled 3</option>
+                        <option value="0.023">Skilled 4</option>
+                        <option value="0.024">Skilled 5</option>
+                        <option value="0.025">Skilled 6</option>
+                        <option value="0.026">Skilled 7</option>
+                        <option value="0.027">Skilled 8</option>
+                        <option value="0.028">Skilled 9</option>
+                        <option value="0.029">Skilled 10</option>
+                        <option value="0.05">Professional 1</option>
+                        <option value="0.053">Professional 2</option>
+                        <option value="0.056">Professional 3</option>
+                        <option value="0.059">Professional 4</option>
+                        <option value="0.062">Professional 5</option>
+                        <option value="0.065">Professional 6</option>
+                        <option value="0.068">Professional 7</option>
+                        <option value="0.071">Professional 8</option>
+                        <option value="0.074">Professional 9</option>
+                        <option value="0.077">Professional 10</option>
+                        <option value="0.1">Artisan 1</option>
+                        <option value="0.105">Artisan 2</option>
+                        <option value="0.11">Artisan 3</option>
+                        <option value="0.115">Artisan 4</option>
+                        <option value="0.12">Artisan 5</option>
+                        <option value="0.125">Artisan 6</option>
+                        <option value="0.13">Artisan 7</option>
+                        <option value="0.135">Artisan 8</option>
+                        <option value="0.14">Artisan 9</option>
+                        <option value="0.15">Artisan 10</option>
+                        <option value="0.20">Master 1</option>
+                        <option value="0.202">Master 2</option>
+                        <option value="0.204">Master 3</option>
+                        <option value="0.206">Master 4</option>
+                        <option value="0.208">Master 5</option>
+                        <option value="0.21">Master 6</option>
+                        <option value="0.212">Master 7</option>
+                        <option value="0.214">Master 8</option>
+                        <option value="0.216">Master 9</option>
+                        <option value="0.218">Master 10</option>
+                        <option value="0.22">Master 11</option>
+                        <option value="0.222">Master 12</option>
+                        <option value="0.224">Master 13</option>
+                        <option value="0.226">Master 14</option>
+                        <option value="0.228">Master 15</option>
+                        <option value="0.23">Master 16</option>
+                        <option value="0.232">Master 17</option>
+                        <option value="0.234">Master 18</option>
+                        <option value="0.236">Master 19</option>
+                        <option value="0.238">Master 20</option>
+                        <option value="0.24">Master 21</option>
+                        <option value="0.242">Master 22</option>
+                        <option value="0.244">Master 23</option>
+                        <option value="0.246">Master 24</option>
+                        <option value="0.248">Master 25</option>
+                        <option value="0.25">Master 26</option>
+                        <option value="0.252">Master 27</option>
+                        <option value="0.254">Master 28</option>
+                        <option value="0.256">Master 29</option>
+                        <option value="0.26">Master 30</option>
+                        <option value="0.3">Guru 1+</option>
+                    </select>
+    
+                    <select id="horseTierSelect" autocomplete="off" hidden>
+                        <option value="0">Horse Tier</option>
+                        <option value="1">Tier 1</option>
+                        <option value="2">Tier 2</option>
+                        <option value="3">Tier 3</option>
+                        <option value="4">Tier 4</option>
+                        <option value="5">Tier 5</option>
+                        <option value="6">Tier 6</option>
+                        <option value="7">Tier 7</option>
+                        <option value="8">Tier 8</option>
+                    </select>
+                </div>
 
-        <label id="trainLevel">Training level:
-            <select id="trainingLevel" autocomplete="off">
-            <option value="0">Beginner 1-10</option>
-            <option value="0.01">Apprentice 1</option>
-            <option value="0.011">Apprentice 2</option>
-            <option value="0.012">Apprentice 3</option>
-            <option value="0.013">Apprentice 4</option>
-            <option value="0.014">Apprentice 5</option>
-            <option value="0.015">Apprentice 6</option>
-            <option value="0.016">Apprentice 7</option>
-            <option value="0.017">Apprentice 8</option>
-            <option value="0.018">Apprentice 9</option>
-            <option value="0.019">Apprentice 10</option>
-            <option value="0.02">Skilled 1</option>
-            <option value="0.021">Skilled 2</option>
-            <option value="0.022">Skilled 3</option>
-            <option value="0.023">Skilled 4</option>
-            <option value="0.024">Skilled 5</option>
-            <option value="0.025">Skilled 6</option>
-            <option value="0.026">Skilled 7</option>
-            <option value="0.027">Skilled 8</option>
-            <option value="0.028">Skilled 9</option>
-            <option value="0.029">Skilled 10</option>
-            <option value="0.05">Professional 1</option>
-            <option value="0.053">Professional 2</option>
-            <option value="0.056">Professional 3</option>
-            <option value="0.059">Professional 4</option>
-            <option value="0.062">Professional 5</option>
-            <option value="0.065">Professional 6</option>
-            <option value="0.068">Professional 7</option>
-            <option value="0.071">Professional 8</option>
-            <option value="0.074">Professional 9</option>
-            <option value="0.077">Professional 10</option>
-            <option value="0.1">Artisan 1</option>
-            <option value="0.105">Artisan 2</option>
-            <option value="0.11">Artisan 3</option>
-            <option value="0.115">Artisan 4</option>
-            <option value="0.12">Artisan 5</option>
-            <option value="0.125">Artisan 6</option>
-            <option value="0.13">Artisan 7</option>
-            <option value="0.135">Artisan 8</option>
-            <option value="0.14">Artisan 9</option>
-            <option value="0.15">Artisan 10</option>
-            <option value="0.20">Master 1</option>
-            <option value="0.202">Master 2</option>
-            <option value="0.204">Master 3</option>
-            <option value="0.206">Master 4</option>
-            <option value="0.208">Master 5</option>
-            <option value="0.21">Master 6</option>
-            <option value="0.212">Master 7</option>
-            <option value="0.214">Master 8</option>
-            <option value="0.216">Master 9</option>
-            <option value="0.218">Master 10</option>
-            <option value="0.22">Master 11</option>
-            <option value="0.222">Master 12</option>
-            <option value="0.224">Master 13</option>
-            <option value="0.226">Master 14</option>
-            <option value="0.228">Master 15</option>
-            <option value="0.23">Master 16</option>
-            <option value="0.232">Master 17</option>
-            <option value="0.234">Master 18</option>
-            <option value="0.236">Master 19</option>
-            <option value="0.238">Master 20</option>
-            <option value="0.24">Master 21</option>
-            <option value="0.242">Master 22</option>
-            <option value="0.244">Master 23</option>
-            <option value="0.246">Master 24</option>
-            <option value="0.248">Master 25</option>
-            <option value="0.25">Master 26</option>
-            <option value="0.252">Master 27</option>
-            <option value="0.254">Master 28</option>
-            <option value="0.256">Master 29</option>
-            <option value="0.26">Master 30</option>
-            <option value="0.3">Guru 1+</option>
-            </select>
-        </label>
+                <div class="row-2" hidden>
+                    <label id="amc" for="priceInputAMC">AMC price:
+                        <input id="priceInputAMC" value="0" autocomplete="off">
+                    </label>
+                        
+                    <select id="familyFameSelect" autocomplete="off">
+                        <option value="0">Family Fame</option>
+                        <option value="0">0-999 / 0.0%</option>
+                        <option value="0.005">1000-3999 / 0.5%</option>
+                        <option value="0.01">4000 - 6999 / 1.0%</option>
+                        <option value="0.015">7000+ / 1.5%</option>
+                    </select>
+                </div>
 
-        <div id="horseTier" hidden>
-            <label for="horseTierSelect">Horse tier:</label>
-            <select class="imperialOptions" id="horseTierSelect" autocomplete="off">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-            </select>
-        </div>
-
-        <div id="famFame" hidden>
-            <label for="familyFameSelect">Family Fame:</label>
-            <select class="imperialOptions" id="familyFameSelect" autocomplete="off">
-                <option value="0">0-999 / 0.0%</option>
-                <option value="0.005">1000-3999 / 0.5%</option>
-                <option value="0.01">4000 - 6999 / 1.0%</option>
-                <option value="0.015">7000+ / 1.5%</option>
-            </select>
-        </div>
-
-        <div id="amc" hidden>
-            <label for="priceInputAMC">AMC price:</label>
-            <input class="imperialOptions" id="priceInputAMC" value="0" autocomplete="off">
-        </div>
-
-        <div id="bmc" hidden>
-            <label for="priceInputBMC">BMC price:</label>
-            <input class="imperialOptions" id="priceInputBMC" value="0" autocomplete="off">
-        </div>
-
-        <div id="vp" hidden>
-            <label for="vpCheck">Value Pack:</label>
-            <input type="checkbox" class="imperialOptions" id="vpCheck" value="0.845" autocomplete="off" checked> 
-        </div>
-        
-        <div id="desc"> 
-            <p class>
-                Thanks to Black Essence: Viper from Imperial Training seals, selling horses via Imperial Delivery is sometimes more profitable than selling them on the horse market if you sell the Black Magic Crystal - Viper created with the essence. This tool is for determining if the horse market or imperial will be more profitable.
-            </p>
+                <div class="row-3" hidden>
+                    <label id="bmc" for="priceInputBMC">BMC price:
+                        <input id="priceInputBMC" value="0" autocomplete="off">
+                    </label>
+    
+                    <button class="vp" id="valuePack" type="button" value="0.845">Value Pack ON</button>
+                </div>
+            </div>
             
-            <ul class>
-                <li>Enter the marketplace price even if you're only checking the result for imperial.</li>
+            <div id="desc"> 
+                <p>
+                    Thanks to Black Essence: Viper from Imperial Training seals, selling horses via Imperial Delivery is sometimes more profitable than selling them on the horse market if you sell the Black Magic Crystal - Viper created with the essence. This tool is for determining if the horse market or imperial will be more profitable.
+                </p>
                 
-                <li>Horse market price includes tax along with the additional silver return you get based on your training level.</li>
-                
-                <li>Base imperial result may be off by 1 or 2 silver because apparently BDO likes to use 50% of market price for one, 50.0000015% for another, 49.99999885829% for another, and so on. 🤔</li>
-            </ul> 
-        </div>
-            
+                <ul>
+                    <li>Enter the marketplace price even if you're only checking the result for imperial.</li>
+                    
+                    <li>Horse market price includes tax along with the additional silver return you get based on your training level.</li>
+                </ul> 
+            </div>
+        </div>    
             <script type="text/javascript" src="script.js"></script>
     </body>
     </html>

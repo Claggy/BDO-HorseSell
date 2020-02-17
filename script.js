@@ -1,24 +1,21 @@
 const priceInput = document.querySelector('#priceInput');
 const priceDisplay = document.querySelector('#priceDisplay');
 const sellType = document.querySelector('#sellType');
-const horseTier = document.querySelector('#horseTier');
 const horseTierSelect = document.querySelector('#horseTierSelect');
 const priceInputAMC = document.querySelector('#priceInputAMC');
 const priceInputBMC = document.querySelector('#priceInputBMC');
-const trainLevel = document.querySelector('#trainLevel');
 const trainingLevel = document.querySelector('#trainingLevel');
-const amc = document.querySelector('#amc');
-const bmc = document.querySelector('#bmc');
-const vp = document.querySelector('#vp');
-const valuePack = document.querySelector('#vpCheck');
-const famFame = document.querySelector('#famFame');
+const row2 = document.querySelector('.row-2');
+const row3 = document.querySelector('.row-3');
+const valuePack = document.querySelector('#valuePack');
 const familyFame = document.querySelector('#familyFameSelect');
 const inputs = document.querySelectorAll('input');
 const select = document.querySelectorAll('select');
 
 sellType.addEventListener('change', changeOptions);
 
-valuePack.addEventListener('change', () => {
+valuePack.addEventListener('click', () => {
+    toggleValuePack();
     updateMarketSilverReturn();
     getPrice();
 });
@@ -38,19 +35,15 @@ inputs.forEach((input) => {
 
 function changeOptions() {
     if (sellType.value === 'imperial') {
-        horseTier.hidden = false;
-        amc.hidden = false;
-        bmc.hidden = false;
-        trainLevel.hidden = true;
-        vp.hidden = false;
-        famFame.hidden = false;
+        horseTierSelect.hidden = false;
+        trainingLevel.hidden = true;
+        row2.hidden = false;
+        row3.hidden = false;
     } else {
-        horseTier.hidden = true;
-        amc.hidden = true;
-        bmc.hidden = true;
-        trainLevel.hidden = false;
-        vp.hidden = true;
-        famFame.hidden = true;
+        horseTierSelect.hidden = true;
+        trainingLevel.hidden = false;
+        row2.hidden = true;
+        row3.hidden = true;
     }
 }
 
@@ -67,8 +60,16 @@ function removeThousandSeparators() {
     }
 }
 
+function toggleValuePack() {
+    if (valuePack.textContent === "Value Pack ON") {
+        valuePack.textContent = "Value Pack OFF";
+    } else {
+        valuePack.textContent = "Value Pack ON";
+    }
+}
+
 function updateMarketSilverReturn() {
-    if (valuePack.checked) {
+    if (valuePack.textContent === "Value Pack ON") {
         valuePack.value = 0.65 * (1.3 + Number(familyFame.value));
     } else {
         valuePack.value = 0.65 * (1 + Number(familyFame.value));
@@ -88,8 +89,8 @@ function getPrice() {
 }
 
 function getMarketPrice() {
-    let taxedPrice = (sellPrice * .7);
-    let marketPrice = (taxedPrice) * trainingLevel.value + (taxedPrice);
+    let taxedPrice = sellPrice * .7;
+    let marketPrice = taxedPrice * trainingLevel.value + taxedPrice;
     let finalPrice = Math.round(marketPrice);
     return addCommas(finalPrice);
 }
