@@ -1,8 +1,19 @@
-html {
-    background: #1e1e1e url('images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
+@media (max-device-height: 1600px) {
+    html {
+        background: #1e1e1e url('images/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+    }   
+}
+
+@media (min-device-height: 1601px) {
+    html {
+        background: #1e1e1e url('images/background_4K.jpg') no-repeat center center fixed;
+        background-size: cover;
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+    }   
 }
 
 body {
