@@ -9,7 +9,7 @@
             <h1 id="priceDisplay">&nbsp;</h1>
             <div class="options">
                 <div class="row-1">
-                    <label>Sell price: <input id="priceInput" value="0" autocomplete="off"></label>
+                    <label>&nbsp;&nbsp;Sell price: <input id="priceInput" onfocus="this.select()" value="0" autocomplete="off"></label>
 
                     <select id="sellType" autocomplete="off">
                         <option value="marketplace">Marketplace</option>
@@ -107,7 +107,7 @@
 
                 <div class="row-2" hidden>
                     <label id="amc" for="priceInputAMC">AMC price:
-                        <input id="priceInputAMC" value="0" autocomplete="off">
+                        <input id="priceInputAMC" onfocus="this.select()" value="0" autocomplete="off">
                     </label>
                         
                     <select id="familyFameSelect" autocomplete="off">
@@ -121,7 +121,7 @@
 
                 <div class="row-3" hidden>
                     <label id="bmc" for="priceInputBMC">BMC price:
-                        <input id="priceInputBMC" value="0" autocomplete="off">
+                        <input id="priceInputBMC" onfocus="this.select()" value="0" autocomplete="off">
                     </label>
     
                     <button class="vp" id="valuePack" type="button" value="0.845">Value Pack ON</button>

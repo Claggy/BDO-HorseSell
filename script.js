@@ -5,6 +5,7 @@ const horseTierSelect = document.querySelector('#horseTierSelect');
 const priceInputAMC = document.querySelector('#priceInputAMC');
 const priceInputBMC = document.querySelector('#priceInputBMC');
 const trainingLevel = document.querySelector('#trainingLevel');
+const options = document.querySelector('.options');
 const row2 = document.querySelector('.row-2');
 const row3 = document.querySelector('.row-3');
 const valuePack = document.querySelector('#valuePack');
@@ -39,11 +40,13 @@ function changeOptions() {
         trainingLevel.hidden = true;
         row2.hidden = false;
         row3.hidden = false;
+        options.style.left = "3.35em";
     } else {
         horseTierSelect.hidden = true;
         trainingLevel.hidden = false;
         row2.hidden = true;
         row3.hidden = true;
+        options.style.left = "2.15em";
     }
 }
 

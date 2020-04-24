@@ -29,19 +29,24 @@ body {
 }
 
 h1 {
+    font-size: 2em;
     text-align: center;
     margin: 14px 0 12px 0;
-    color: rgba(255,234,197, 0.74);
+    color: rgba(255, 234, 197, 0.74);
 }
 
 .options {
-    text-align: center;
+    margin: 0 auto;
     margin-bottom: 10px;
+    position: relative;
+    left: 2.15em;
 }
+
 #desc, input, select, button {
     border: 1px solid;
     border-radius: 3px;
-    background-color: rgba(255,234,197,0.74);
+    background-color: rgba(255, 234, 197, 0.74);
+    margin: 0;
 }
 
 label {
@@ -55,32 +60,58 @@ label {
     box-shadow: -2px 2px 12px 0px rgba(0, 0, 0, 0.3);
 }
 
-.row-2 {
-    position: relative;
-    right: 1.88em;
-}
-
-.row-3 {
-    position: relative;
-    right: 3.05em;
-}
-
 #valuePack {
-    height: 1.5em;
-    width: 7.5em;
+    width: 7.8em;
     padding: 0;
+    line-height: normal;
 }
 
 .row-2, .row-3 {
     margin-top: 2px;
 }
 
+#priceInput, #priceInputAMC, #priceInputBMC {
+    width: 12.5em;
+}
+
+#sellType {
+    width: 7.82em;
+}
+
+#trainingLevel {
+    width: 9.22em;
+}
+
+#horseTierSelect {
+    width: 6.875em;
+}
+
 #desc p {
     margin: 8px;
 }
 
+::selection {
+    color: black;
+    background: rgba(110, 128, 152, 0.6);
+}
+
 button, input, select {
     font-family: inherit;
+    font-size: 80%;
     line-height: 1.15;
-    margin: 0;
+    padding: 1px 1px;
+    height: 1.484em;
+    box-sizing: border-box;
 }
+
+select {
+    padding-top: 0; 
+}
+
+select:focus, input:focus, button:focus {
+    outline:none;
+}
+
+[hidden] {
+    display: none;
+  }
